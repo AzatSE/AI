@@ -1,6 +1,18 @@
-/backend/db.sqlite3
+# Local data and generated outputs
+**/*.sqlite3
+**/*.sqlite3-*
+**/*.sqlite
+**/*.sqlite-*
 **/__pycache__/
 .venv/
 frontend/node_modules/
 frontend/dist/
+# Secrets: commit examples only, never real environment files.
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+.coverage
+htmlcov/
+.pytest_cache/

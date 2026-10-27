@@ -3,7 +3,7 @@ import './App.css'
 
 type Post = { id: number; author: string; handle: string; text: string; image: string; likes: number; created_at: string }
 const photo = (id: string, w=1200) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`
-const avatar = (name: string) => `https://i.pravatar.cc/100?u=${name}`
+const avatar = (name: string) => `https://i.pravatar.cc/100?u=${encodeURIComponent(name)}`
 const icons: Record<string,string> = { Home:'⌂', Explore:'⌕', Notifications:'♧', Bookmarks:'♧', Profile:'◯', More:'•••' }
 function App() {
  const [posts,setPosts] = useState<Post[]>([]), [text,setText] = useState(''), [tab,setTab]=useState('For you'), [section,setSection]=useState('Home'), [query,setQuery]=useState(''), [error,setError]=useState(''), [busy,setBusy]=useState(false)
